@@ -6,11 +6,42 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		6ADFCE2416E3C3B500CAF175 /* hq.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = hq.js; sourceTree = "<group>"; };
+		6ADFCE2516E3C3B500CAF175 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		6ADFCE2616E3C3B500CAF175 /* jsonInput.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jsonInput.js; sourceTree = "<group>"; };
+		6ADFCE2816E3C45100CAF175 /* convmany.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = convmany.sh; sourceTree = "<group>"; };
+		6ADFCE2916E3C45100CAF175 /* dirtojson.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = dirtojson.py; sourceTree = "<group>"; };
+		6ADFCE2A16E3C45100CAF175 /* rundirtojson.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = rundirtojson.sh; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		6ADFCE1A16E3C2CE00CAF175 = {
 			isa = PBXGroup;
 			children = (
+				6ADFCE2716E3C45100CAF175 /* tools */,
+				6ADFCE2316E3C3B500CAF175 /* wwwroot */,
 			);
+			sourceTree = "<group>";
+		};
+		6ADFCE2316E3C3B500CAF175 /* wwwroot */ = {
+			isa = PBXGroup;
+			children = (
+				6ADFCE2416E3C3B500CAF175 /* hq.js */,
+				6ADFCE2516E3C3B500CAF175 /* index.html */,
+				6ADFCE2616E3C3B500CAF175 /* jsonInput.js */,
+			);
+			path = wwwroot;
+			sourceTree = "<group>";
+		};
+		6ADFCE2716E3C45100CAF175 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				6ADFCE2816E3C45100CAF175 /* convmany.sh */,
+				6ADFCE2916E3C45100CAF175 /* dirtojson.py */,
+				6ADFCE2A16E3C45100CAF175 /* rundirtojson.sh */,
+			);
+			path = tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
