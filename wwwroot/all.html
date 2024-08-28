@@ -1,0 +1,57 @@
+<html>
+    <!-- Page to display all "House Quiz" images. 
+     There's a drop-down for the address; when you select an address,
+     all images for that address are displayed on the page.
+     Mark Riordan   28-AUG-2024
+     -->
+<head>
+    <title>All houses</title>
+    <script src="jsonInput.js"></script>
+    <script>
+        function getHouses() {
+            return jsonInput.houses;
+        }
+        function onDropdownChange() {
+            var select = document.getElementById("houseDropdown");
+            var selectedHouse = select.options[select.selectedIndex].text;
+            console.log('selectedHouse=' + selectedHouse);
+            var houses = getHouses();
+            var div = document.getElementById("images");
+            div.innerHTML = ""; // Clear the current contents of the div
+            for (var i = 0; i < houses.length; i++) {
+                if (houses[i].address == selectedHouse) {
+                    var images = houses[i].images;
+                    for(var iImage = 0; iImage < images.length; iImage++) {
+                        var img = document.createElement("img");
+                        var filename = 'images/' + selectedHouse + "/" + images[iImage];
+                        console.log('filename=' + filename);
+                        img.src = filename;
+                        div.appendChild(img);
+                        var textNode = document.createTextNode(' ');
+                        div.appendChild(textNode);
+                    }
+                    break;
+                }
+            }
+        }
+        function loadSelect() {
+            var select = document.getElementById("houseDropdown");
+            var houses = getHouses();
+            for (var i = 0; i < houses.length; i++) {
+                var option = document.createElement("option");
+                option.text = houses[i].address;
+                select.add(option);
+            }
+            select.onchange = onDropdownChange;
+        }
+    </script>
+</head>
+<body onload="loadSelect(); onDropdownChange();">
+    <select id="houseDropdown">
+    </select>
+    <div id="images">
+        <!-- <img id="mainimage" style="width: 100%; " src="images/105 Standish Ct/010fullfront.jpg" /> -->
+   </div> 
+</body>
+</body>
+</html>
